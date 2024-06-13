@@ -5,6 +5,7 @@ import snowflake.connector
 from snowflake.connector import DictCursor
 from snowflake.connector.pandas_tools import write_pandas
 
+from datetime import datetime
 import os
 
 SNOWFLAKE_USER = os.environ['SNOWFLAKE_USER']
