@@ -5,6 +5,8 @@ import snowflake.connector
 from snowflake.connector import DictCursor
 from snowflake.connector.pandas_tools import write_pandas
 
+import os
+
 SNOWFLAKE_USER = os.environ['SNOWFLAKE_USER']
 SNOWFLAKE_PASS = os.environ['SNOWFLAKE_PASS']
 SNOWFLAKE_ACCOUNT = os.environ['SNOWFLAKE_ACCOUNT']
