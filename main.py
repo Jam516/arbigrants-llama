@@ -53,7 +53,7 @@ def increment_table(df, **kwargs):
     table_name = "ARBIGRANTS_ONE_TOTAL_TVL"
     create_table_query_tvl = f"""
     CREATE TABLE IF NOT EXISTS {table_name} (
-        DATE VARCHAR(16777216),
+        DATE TIMESTAMP_NTZ,
         TVL NUMBER(18,0)
     );
     """
@@ -67,7 +67,7 @@ def increment_table(df, **kwargs):
         MERGE INTO {table_name} AS target
         USING (
             SELECT
-                %s AS DATE,
+                TO_DATE(%s) AS DATE,
                 %s AS TVL
         ) AS source
         ON target.DATE = source.DATE
